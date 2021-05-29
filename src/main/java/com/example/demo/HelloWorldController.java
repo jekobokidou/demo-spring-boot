@@ -30,4 +30,9 @@ public class HelloWorldController {
 	public HelloWorldBean helloWorldBeanPath(@PathVariable String name ){
 		return new HelloWorldBean(String.format("Hello World Bean path %s", name));
 	}
+	
+	@GetMapping(path="/hello-world-error")
+	public String helloWorldGetError() {
+		throw new RuntimeException("Hello World Error");
+	}
 }
